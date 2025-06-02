@@ -1,0 +1,177 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, hsl(195, 91%, 37%), hsl(237, 49%, 15%));
+  position: relative;
+  overflow: hidden;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Bolhas decorativas */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Bolha maior esquerda */
+body::before {
+  width: 300px;
+  height: 300px;
+  background: hsl(174, 100%, 66%, 1);
+  top: -100px;
+  left: -100px;
+}
+
+/* Bolha menor direita */
+body::after {
+  width: 200px;
+  height: 200px;
+  background: hsl(174, 100%, 66%, 1);
+  bottom: -80px;
+  right: -80px;
+}
+
+main {
+  width: 90%;
+  max-width: 350px;
+  height: 374px;
+  border-radius: 15px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+main img {
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.img-profile img {
+  border: 5px solid #fff;
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  top: 95px;
+  left: 50%;
+  transform: translateX(
+    -50%
+  ); /*Essa função move o elemento na direção horizontal.*/
+}
+
+.about {
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about h1 {
+  font-weight: 700;
+  font-size: 18px;
+  color: #2e3349;
+}
+
+.about span {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6b7082;
+  margin-left: 8px;
+}
+
+.about p {
+  margin-top: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7082;
+}
+
+.divider {
+  width: 99%;
+  border: 1px solid #e8e9ec;
+  margin-top: 10px;
+}
+
+.numbers {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numbers ul {
+  padding: 0;
+  margin: 0;
+  color: #6b7082;
+  width: 249px;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.numbers li span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2e3349;
+}
+/* ====== MEDIA QUERIES ====== */
+
+/* Tablets (a partir de 600px) */
+@media (min-width: 600px) {
+  .img-profile img {
+    width: 96px;
+    height: 96px;
+    top: 95px;
+  }
+
+  .about h1 {
+    font-size: 18px;
+  }
+
+  .about span,
+  .about p {
+    font-size: 14px;
+  }
+
+  .numbers ul {
+    gap: 30px;
+  }
+}
+
+/* Laptops e desktops (a partir de 1024px) */
+@media (min-width: 1024px) {
+  main {
+    max-width: 350px;
+  }
+
+  .numbers ul {
+    gap: 40px;
+  }
+
+  body::before {
+    width: 300px;
+    height: 300px;
+    top: -100px;
+    left: -100px;
+  }
+
+  body::after {
+    width: 200px;
+    height: 200px;
+    bottom: -80px;
+    right: -80px;
+  }
+}
